@@ -67,6 +67,7 @@
             <!-- Foto de Perfil -->
             <div class="flex justify-center">
                 <div class="profile-img-container rounded-2xl overflow-hidden bg-slate-800">
+                    <!-- Lembra de subir a imagem "aniversário.jpeg" no GitHub -->
                     <img src="aniversário.jpeg" 
                          alt="Foto do Aniversariante" 
                          class="w-full h-full object-cover"
@@ -135,8 +136,8 @@
 
     <script>
         function confirmarPresenca(numero) {
-            // Mensagem personalizada conforme solicitado
-            const mensagem = encodeURIComponent("Fala Luiz, você é meu ídolo, jamais perderia uma oportunidade dessas, obrigado por ser meu amigo!");
+            // Nova mensagem personalizada
+            const mensagem = encodeURIComponent("Fala meu ídolo lindo, nunca perderia um momento desses!");
             const url = `https://wa.me/${numero}?text=${mensagem}`;
             
             const status = document.getElementById('status');
