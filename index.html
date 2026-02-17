@@ -69,14 +69,15 @@
                 <div class="profile-img-container rounded-2xl overflow-hidden bg-slate-800">
                     <img src="aniversário.jpeg" 
                          alt="Foto do Aniversariante" 
-                         class="w-full h-full object-cover">
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&h=400&auto=format&fit=crop'">
                 </div>
             </div>
 
             <!-- Conteúdo -->
             <div class="p-8 pt-28 space-y-10 text-center">
                 <div class="relative inline-block px-4">
-                    <h3 class="text-3xl font-header font-bold text-slate-900 tracking-tight">Será um prazer ter a sua presença</h3>
+                    <h3 class="text-2xl font-header font-bold text-slate-900 tracking-tight leading-snug">Será um prazer ter a sua presença</h3>
                 </div>
 
                 <!-- Info Grid -->
@@ -116,7 +117,6 @@
                     </p>
                     
                     <div class="flex flex-col gap-4 px-4">
-                        <!-- Número atualizado para 5581998657957 -->
                         <button onclick="confirmarPresenca('5581998657957')" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-xs uppercase tracking-[0.2em] shadow-xl shadow-blue-900/20 hover:bg-blue-700 transition-all active:scale-95">
                             Confirmar Presença
                         </button>
@@ -128,21 +128,23 @@
             </div>
             
             <div id="status" class="hidden p-5 bg-slate-900 text-blue-400 text-center font-bold text-xs uppercase tracking-widest">
-                Redirecionando para o WhatsApp... 👊
+                Abrindo WhatsApp... 👊
             </div>
         </div>
     </div>
 
     <script>
         function confirmarPresenca(numero) {
-            const mensagem = encodeURIComponent("Fala Luiz! Confirmo minha presença no seu aniversário no Bode Espinheiro! 🎉");
+            // Mensagem personalizada conforme solicitado
+            const mensagem = encodeURIComponent("Fala Luiz, você é meu ídolo, jamais perderia uma oportunidade dessas, obrigado por ser meu amigo!");
             const url = `https://wa.me/${numero}?text=${mensagem}`;
+            
             const status = document.getElementById('status');
             status.classList.remove('hidden');
+            
             setTimeout(() => {
-                window.open(url, '_blank');
-                status.classList.add('hidden');
-            }, 1000);
+                window.location.href = url;
+            }, 500);
         }
 
         function verMapa() {
@@ -150,5 +152,4 @@
         }
     </script>
 </body>
-
 </html>
